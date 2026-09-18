@@ -147,11 +147,19 @@ main {
 	font-weight: 600;
 	cursor: pointer;
 	margin-top: 10px;
-	transition: opacity 0.2s;
+	transition: background 0.2s, opacity 0.2s;
 }
 
 .done-btn:active {
 	opacity: 0.8;
+}
+
+/* Состояние заблокированной кнопки */
+.done-btn.disabled {
+	background: #1C2433;
+	color: #4B6B99;
+	cursor: not-allowed;
+	opacity: 1;
 }
 
 .hint {
@@ -305,13 +313,25 @@ main {
 	background: var(--card-bg);
 }
 
+.day.empty {
+	background: transparent;
+}
+
 .day.today {
 	border: 1px solid var(--accent-color);
 }
 
+/* Выполненный день */
+.day.done {
+	background: var(--accent-color);
+	color: #ffffff;
+	font-weight: 700;
+}
+
+/* Пропущенный день */
 .day.miss {
 	color: var(--text-secondary);
-	opacity: 0.5;
+	opacity: 0.4;
 }
 
 .legend {
