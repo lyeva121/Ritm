@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>Ритм</title>
+	
+	<!-- iOS / PWA Meta Tags -->
+	<meta name="theme-color" content="#0B0C0E">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="Ритм">
+	<link rel="manifest" href="manifest.json">
+	<link rel="apple-touch-icon" href="icon.png">
+
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+	<main>
+		<!-- Top Bar -->
+		<div class="top">
+			<a class="logo" href="#">Рит<b>м</b></a>
+			<div class="streak"><s id="header-streak">0</s> тренировок</div>
+		</div>
+
+		<!-- SCREEN 1: Сегодня -->
+		<div class="screen view-tab" id="view-today">
+			<div class="eyebrow">Отдых между подходами</div>
+			<div class="rest">
+				<span class="rest-num" id="rest-sec">40</span>
+				<span class="rest-unit">секунд</span>
+			</div>
+
+			<div class="scale" id="scale-ticks"></div>
+
+			<div class="scale-cap">
+				<span>День <b id="current-day">1</b> из 10</span>
+				<span>Этап <span id="current-stage">1</span> из 9</span>
+			</div>
+
+			<button class="done-btn" id="btn-done">Тренировка выполнена</button>
+
+			<div class="hint" id="hint-text">Ещё <b>10 тренировок</b> — и отдых сократится.</div>
+
+			<div class="path">
+				<div class="path-title">Путь до нуля</div>
+				<div class="steps" id="path-steps">
+					<div class="step">40</div><div class="step">35</div><div class="step">30</div>
+					<div class="step">25</div><div class="step">20</div><div class="step">15</div>
+					<div class="step">10</div><div class="step">5</div><div class="step">0</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- SCREEN 2: Этапы -->
+		<div class="screen view-tab" id="view-stages" style="display:none;">
+			<div class="h1">Этапы</div>
+			<div class="lead">Каждый этап — 10 тренировок. Потом отдых минус 5 секунд.</div>
+			<div id="stages-list"></div>
+		</div>
+
+		<!-- SCREEN 3: История -->
+		<div class="screen view-tab" id="view-history" style="display:none;">
+			<div class="h1">История</div>
+			<div class="cards">
+				<div class="card"><div class="v" id="total-count">0</div><div class="t">всего тренировок</div></div>
+				<div class="card"><div class="v" id="streak-count">0</div><div class="t">дней подряд</div></div>
+			</div>
+
+			<div class="cal-head">
+				<div class="cal-month" id="cal-month-title">Сентябрь 2026</div>
+			</div>
+			<div class="week"><span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span><span>сб</span><span>вс</span></div>
+			<div class="days" id="calendar-days"></div>
+
+			<div class="legend">
+				<span><i class="sw-mark"></i>тренировка есть</span>
+				<span><i class="sw-miss"></i>пропуск</span>
+			</div>
+		</div>
+
+		<!-- Bottom Tabs -->
+		<div class="tabs">
+			<a class="tab on" id="tab-today" href="#today"><i>◉</i>Сегодня</a>
+			<a class="tab" id="tab-stages" href="#stages"><i>▤</i>Этапы</a>
+			<a class="tab" id="tab-history" href="#history"><i>▦</i>История</a>
+		</div>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>

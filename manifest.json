@@ -1,0 +1,15 @@
+{
+  "name": "Ритм",
+  "short_name": "Ритм",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0B0C0E",
+  "theme_color": "#0B0C0E",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
